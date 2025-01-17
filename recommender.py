@@ -104,3 +104,33 @@ def hybrid_recommendation(user_id, product_id, interaction_data, product_data, n
     # Sort combined scores
     combined_recommendations = sorted(combined_scores.items(), key=lambda x: x[1], reverse=True)[:n]
     return [{"ProductID": prod, "Score": score} for prod, score in combined_recommendations]
+
+# Example interaction data
+interaction_data = pd.DataFrame({
+    'user_id': [1, 2, 1, 3, 2],
+    'product_id': [101, 101, 102, 103, 102],
+    'rating': [5, 4, 3, 4, 5]
+})
+
+# Example product data
+product_data = pd.DataFrame({
+    'product_id': [101, 102, 103, 104],
+    'product_description': [
+        "This is a great product for outdoor activities.",
+        "High-quality product for indoor use.",
+        "A reliable product with excellent performance.",
+        "Affordable and durable product for everyday use."
+    ]
+})
+
+# Collaborative Filtering Recommendations
+cf_recs = collaborative_filtering(user_id=1, interaction_data=interaction_data)
+print("Collaborative Filtering Recommendations:", cf_recs)
+
+# Content-Based Recommendations
+cb_recs = content_based_recommendation(product_id=101, product_data=product_data)
+print("Content-Based Recommendations:", cb_recs)
+
+# Hybrid Recommendations
+hybrid_recs = hybrid_recommendation(user_id=1, product_id=101, interaction_data=interaction_data, product_data=product_data)
+print("Hybrid Recommendations:", hybrid_recs)
