@@ -13,7 +13,7 @@ load_dotenv()
 app = Flask(__name__)
 
 # Configurations
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://sgituire:#Stegitez18@localhost/ecommerce'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://***:***@localhost/ecommerce'
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'my_fallback_secret_key')
 
 # Initialize extensions
