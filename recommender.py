@@ -134,3 +134,8 @@ print("Content-Based Recommendations:", cb_recs)
 # Hybrid Recommendations
 hybrid_recs = hybrid_recommendation(user_id=1, product_id=101, interaction_data=interaction_data, product_data=product_data)
 print("Hybrid Recommendations:", hybrid_recs)
+
+if __name__ == "__main__":
+    print("Collaborative Filtering Recommendations:", collaborative_filtering(1))
+    print("Content-Based Recommendations:", content_based(1))
+    print("Hybrid Recommendations:", hybrid_recommendation(1, 101))

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}User Dashboard{% endblock %}
+
+{% block content %}
+<section id="dashboard" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">User Dashboard</h2>
+            <p class="text-center">Welcome, {{ current_user.username }}!</p>
+
+        <h3 class="mt-5">Your Recommendations</h3>
+        <div id="recommendations" class="row g-4">
+        <!-- Dynamic recommendation cards populated by script.js -->
+            <div class="col-md-4 col-sm-6">
+                <div class="card">
+                    <img src="recommendation-image.jpg" class="card-img-top" alt="Recommendation Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Recommendation Title</h5>
+                            <p class="card-text">Brief description of the recommendation.</p>
+                        <a href="#" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
